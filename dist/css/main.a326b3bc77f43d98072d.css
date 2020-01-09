@@ -1,0 +1,19 @@
+body {
+  background: #ddd; }
+
+body {
+  font-size: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  background: url(images/14251047d04506da47bd88cd839dfe2e.jpg) no-repeat; }
+
+.box {
+  border: 1px solid #dddddd;
+  height: 20px;
+  width: 500px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex; }
+

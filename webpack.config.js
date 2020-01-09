@@ -18,6 +18,10 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		// publicPath: '/'
 	},
+	// 忽略大型的 library 可以提高构建性能
+	module: {
+    noParse: /jquery|lodash/,
+  },
 	// 优化项
 	// optimization: {
 	// 	minimizer: [

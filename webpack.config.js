@@ -43,14 +43,22 @@ module.exports = {
 			})
 		],
 		splitChunks: {
-			chunks: 'all'
-			// cacheGroups: {
-			// 	commons: {
-			// 		name: "common",
-			// 		chunks: "initial",
-			// 		minChunks: 2
-			// 	}
-			// }
+			cacheGroups: {
+				// 抽离公共代码
+				common: {
+					name: "common",
+					chunks: "initial",
+					minChunks: 2 //引入模块次数大于等于2
+				},
+				// 抽离第三方模块代码
+				vendor: {
+					chunks: 'initial',
+					test: /node_modules/,
+					priority: 1,
+					minSize: 0,
+					minChunks: 2
+				}
+			}
 		}
 	},
 	module: {
@@ -117,7 +125,7 @@ module.exports = {
 	},
 	devServer: {
 		host: '0.0.0.0',
-		hot: true,
+		hot: true, // 开启HMR
 		port: 8080
 	},
 	plugins: [
